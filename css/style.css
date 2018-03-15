@@ -1,0 +1,92 @@
+* {
+ margin: 0;
+ padding: 0;
+}
+ 
+body {
+    width: 100%;
+    height: 100%;
+    color:#333;
+    font-family: "Segoe UI", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size:0.94em;
+    line-height:135%;
+    background: red;
+ }
+ 
+/* -------------------------------
+ Структура
+ ----------------------------------*/
+ 
+/* -------------------------------
+ Шапка сайта
+----------------------------------*/
+ #headerInner {
+ border: 0px solid #000;
+ position:relative;
+ width:100%;
+ max-width:1000px;
+ height:100px;
+ margin:0 auto;
+ background: #1FA2E1;
+}
+/* -------------------------------
+ Ширина сайта в 1000px
+ ----------------------------------*/
+ 
+#wrapper {
+ margin-top:40px;
+ border:0px solid #000;
+ width: 100%;
+ max-width:1000px;
+ margin: 0 auto;
+ height: auto !important;
+ margin-bottom:15px;
+ background: #fff;
+ }
+
+/* -------------------------------
+ Главный контент
+ ----------------------------------*/
+ 
+#content {
+border: 0px solid #000;
+width:100%;
+margin-right:0px;
+border: 0px solid #1FA2E1;
+background: #c0c0c0;
+}
+
+ 
+@media screen and (min-width:100px) and (max-width:1024px) {
+/* размер блока, где находятся главный контент и сайтбар*/
+body #wrapper {
+ margin-top:40px;
+ width: 90%;
+ margin: 0 auto;
+ }
+/* размер шапки сайта*/
+body #headerInner {
+ width:90%;
+ margin:0 auto;
+}
+ /* размер главного контента*/
+#wrapper #content {
+ width:100%;
+}
+}/* скобка, закрывающая тег @media screen*/
+
+@media screen and (min-width:100px) and (max-width:750px) {
+   
+}
+@media screen and (min-width:100px) and (max-width:690px) {
+    body {
+       
+    } 
+#wrapper #content {
+  float:none;
+  width:100%;
+  margin-right:0px;
+ }
+ 
+
+}

@@ -15,8 +15,8 @@ class ForumController {
     {      
         
         Forum::saveTheme();
-        
-        header('location:/forumtheme');
+        $idp = 'p'.$_SESSION['PAGINATION_PARAMETER'];
+        header("location:/forumtheme/$idp");
         
     }    
     
@@ -31,8 +31,8 @@ class ForumController {
     {      
        Forum::saveContent();
        $id = $_SESSION['URI_PARAMETER'];
-     
-       header("location:/forumcontent/$id");
+       $idp = 'p'.$_SESSION['PAGINATION_PARAMETER'];
+       header("location:/forumcontent/$id/$idp");
              
     }
             

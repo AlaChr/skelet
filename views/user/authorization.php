@@ -5,7 +5,7 @@
     <?php if (!isset($_SESSION['iduser'])): ?>
 <form id="registration" action="authorization" method="POST">
     <a>Логин</a><input type="text" name ="user" required>
-    <a>Пароль</a><input type="text" name ="password" required>
+    <a>Пароль</a><input type="password" name ="password" required>
     <input type="submit" title="">
 </form>
     <?php endif; ?>

@@ -1,5 +1,5 @@
             <div id = "footer">
-                
+                <a>FOOTER</a>
             </div>     
         </div> <!--конец wrapper -->
     </body>

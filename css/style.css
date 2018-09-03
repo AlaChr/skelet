@@ -56,6 +56,15 @@ border: 0px solid #1FA2E1;
 background: #c0c0c0;
 }
 
+#footer {
+ border: 0px solid #000;
+ position:relative;
+ width:100%;
+ max-width:1000px;
+ height:100px;
+ margin:0 auto;
+ background: #1FAAAA;
+}
  
 @media screen and (min-width:100px) and (max-width:1024px) {
 /* размер блока, где находятся главный контент и сайтбар*/

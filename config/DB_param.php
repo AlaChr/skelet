@@ -1,5 +1,5 @@
 <?php
-$dsn = 'mysql:dbname=kalach;host=kalach';
+$dsn = 'mysql:dbname=kalach;host=kalach.local;charset=utf8';
 $user = 'root';
-$password = '';
+$password = 'OOASU';
 

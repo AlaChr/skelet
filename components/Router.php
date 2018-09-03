@@ -20,23 +20,34 @@ class Router
     
     public function run() {
     $uri = $this->getURI();
-    
+    $valuefound = FALSE;        // для проверки наличия элемента в массиве
+        
     foreach ($this->routes as $uriPattern => $path){
        
         if ((preg_match("~$uriPattern~", $uri))) {
             $template=$uri;
-                                 
+            $valuefound = TRUE;                    
             $internalRoute = preg_replace("~$uriPattern~", $path, $uri);
+            
             $segments = explode('/', $internalRoute);
             
             $controllerName = array_shift($segments).'Controller';
+            
             $controllerName = ucfirst($controllerName);
             $actionName = 'action'.ucfirst(array_shift($segments));
-            
-            
+                       
             // проверяем в конце массива число или нет
             $res = explode('/', $template);
-            $checkfornum = end($res);
+            $checkfornum = end($res);               // для проверки в конце число
+            $checkforpag = end($res);               // для проверки на параметр пагинации
+            
+            if (preg_match("~^p[0-9]+~", $checkforpag)) {
+                $resultp = intval(preg_replace("~p~",'',$checkforpag));
+                $_SESSION['PAGINATION_PARAMETER'] = $resultp;
+                
+                $checkfornum = prev($res);
+                
+            }
             if (preg_match("~^[0-9]+~", $checkfornum)) {
                 $_SESSION['URI_PARAMETER'] = $checkfornum;
                 $parameters[] = $checkfornum;
@@ -56,10 +67,11 @@ class Router
                 break;
             }
         }
-        
-        
+               
         }
-        
+        if ($valuefound == FALSE) {
+            include_once (ROOT.'/views/index.php');
+        }
     }
        
     
